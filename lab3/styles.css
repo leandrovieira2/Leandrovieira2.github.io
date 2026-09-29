@@ -226,3 +226,126 @@ td {
     flex-direction: column;
   }
 }
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "titulo   titulo   titulo"
+    "tabela   tabela   imagem1"
+    "curiosidades imagem2 vazio1"
+    "vazio2   vazio2   vazio2";
+  gap: 20px;
+  padding: 40px;
+}
+
+.grid-titulo { grid-area: titulo; }
+.grid-tabela { grid-area: tabela; }
+.grid-imagem1 { grid-area: imagem1; }
+.grid-curiosidades { grid-area: curiosidades; }
+.grid-imagem2 { grid-area: imagem2; }
+.grid-vazio1 { grid-area: vazio1; }
+.grid-vazio2 { grid-area: vazio2; min-height: 60px; }
+
+.info-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.info-grid img:hover {
+  transform: scale(1.03);
+}
+
+.grid-titulo,
+.grid-tabela,
+.grid-curiosidades {
+  background-color: #fdeec4;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.grid-imagem1,
+.grid-imagem2 {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "titulo"
+      "tabela"
+      "imagem1"
+      "curiosidades"
+      "imagem2"
+      "vazio1"
+      "vazio2";
+  }
+}
+
+/* ---------- Vídeo background ---------- */
+.video-bg-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 30px 40px;
+  border-radius: 10px;
+}
+
+/* ---------- Efeito Parallax ---------- */
+.parallax {
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.content-scroll {
+  padding: 60px 40px;
+  background-color: white;
+  text-align: center;
+}
+
+.content-scroll h3 {
+  margin-bottom: 10px;
+}
+
+/* No telemóvel, background-attachment: fixed não funciona bem — desativa */
+@media (max-width: 700px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
