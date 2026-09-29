@@ -13,6 +13,81 @@ section {
   padding: 40px;
 }
 
+/* ---------- Secção Projetos ---------- */
+.projetos {
+  background-color: #f5c9a8;
+}
+
+.projetos h2 {
+  margin-bottom: 8px;
+}
+
+.projetos p {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background-color: #f4a3a3;
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1 1 250px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
+}
+
+.card h3 {
+  margin-bottom: 8px;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* ---------- Secção Disciplina ---------- */
+.disciplina {
+  background-color: #0071b8;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.disciplina-conteudo {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+}
+
+.disciplina-texto,
+.disciplina-imagem {
+  flex: 1;
+}
+
+.disciplina-texto ul {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.disciplina-texto a {
+  color: white;
+  font-weight: bold;
+}
+
+.disciplina-imagem img {
+  width: 100%;
+  max-width: 400px;
+}
+
 /* ---------- Secção Hero ---------- */
 .hero {
   background-image: url("images/hero.jpg");
@@ -66,83 +141,8 @@ section {
   font-weight: bold;
 }
 
-/* ---------- Secção Projetos ---------- */
-.projetos {
-  background-color: #f5c9a8;
-}
-
-.projetos h2 {
-  margin-bottom: 8px;
-}
-
-.projetos p {
-  color: #555;
-  margin-bottom: 30px;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.card {
-  background-color: #f4a3a3;
-  border-radius: 8px;
-  padding: 20px;
-  flex: 1 1 250px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.card h3 {
-  margin-bottom: 8px;
-}
-
-.card a {
-  display: inline-block;
-  margin-top: 12px;
-  color: #333;
-  font-weight: bold;
-}
-
-/* ---------- Secção Disciplina ---------- */
-.disciplina {
-  background-color: #0071b8;
-  color: white;
-  display: flex;
-  align-items: center;
-}
-
-.disciplina-conteudo {
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  align-items: center;
-  width: 100%;
-}
-
-.disciplina-texto,
-.disciplina-imagem {
-  flex: 1;
-}
-
-.disciplina-texto ul {
-  margin: 20px 0;
-  padding-left: 20px;
-}
-
-.disciplina-texto a {
-  color: white;
-  font-weight: bold;
-}
-
-.disciplina-imagem img {
-  width: 100%;
-  max-width: 400px;
-}
-
 /* ---------- Responsivo ---------- */
-@media (max-width: 700px) {
+@media (width <= 700px) {
   .disciplina-conteudo {
     flex-direction: column;
   }

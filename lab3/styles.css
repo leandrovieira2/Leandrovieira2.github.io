@@ -3,10 +3,9 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   background-color: #f2f2f2;
-  margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
 }
 
@@ -38,7 +37,7 @@ nav a {
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 15%);
   transition: transform 0.2s ease;
 }
 
@@ -47,15 +46,6 @@ nav a:hover {
   background-color: #2b2b2b;
   color: white;
 }
-
-@media (max-width: 500px) {
-  nav a {
-    flex: 1 1 40%;
-    font-size: 0.9rem;
-    padding: 14px 10px;
-  }
-}
-
 
 img {
   width: 100%;
@@ -98,27 +88,7 @@ td {
   color: #333;
 }
 
-.fotografias {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 10px;
-}
-
-.fotografias img {
-  width: 150px;
-  border-radius: 20px;
-}
-
-.poema p:nth-child(odd) {
-  color: #0071b8;
-}
-
-.poema p:nth-child(even) {
-  color: #333;
-  font-style: italic;
-}
-
-/* Secções da página multimédia — cada uma ocupa o ecrã, com cor própria */
+/* ---------- Secções da página multimédia ---------- */
 .sec-fotografias,
 .sec-video,
 .sec-poema {
@@ -143,7 +113,6 @@ td {
   background-color: #f0d9d9;
 }
 
-/* Fotografias com efeito de transição ao passar o rato */
 .fotografias {
   display: flex;
   flex-flow: row wrap;
@@ -157,11 +126,6 @@ td {
   transition: transform 0.4s ease;
 }
 
-.fotografias img:hover {
-  transform: scale(1.15);
-}
-
-/* Poema com nth-child */
 .poema p:nth-child(odd) {
   color: #0071b8;
 }
@@ -171,7 +135,73 @@ td {
   font-style: italic;
 }
 
-/* Secção com imagem emblemática de largura total */
+/* ---------- Localização ---------- */
+.local-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.local-texto,
+.local-mapa {
+  flex: 1;
+}
+
+.local-mapa iframe {
+  width: 100%;
+  height: 400px;
+  border: 0;
+}
+
+/* ---------- Informações (grid) ---------- */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "titulo   titulo   titulo"
+    "tabela   tabela   imagem1"
+    "curiosidades imagem2 vazio1"
+    "vazio2   vazio2   vazio2";
+  gap: 20px;
+  padding: 40px;
+}
+
+.grid-titulo { grid-area: titulo; }
+.grid-tabela { grid-area: tabela; }
+.grid-imagem1 { grid-area: imagem1; }
+.grid-curiosidades { grid-area: curiosidades; }
+.grid-imagem2 { grid-area: imagem2; }
+.grid-vazio1 { grid-area: vazio1; }
+
+.grid-vazio2 {
+  grid-area: vazio2;
+  min-height: 60px;
+}
+
+.info-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.grid-titulo,
+.grid-tabela,
+.grid-curiosidades {
+  background-color: #fdeec4;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.grid-imagem1,
+.grid-imagem2 {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* ---------- Imagem emblemática ---------- */
 .sec-emblematica {
   padding: 0;
 }
@@ -192,99 +222,13 @@ td {
   color: white;
   font-weight: bold;
   font-size: 6vw;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 6px rgb(0 0 0 / 60%);
 }
 
-@media (max-width: 600px) {
-  .texto {
-    font-size: 8vw;
-    left: 15px;
-    bottom: 15px;
-  }
-}
-
-.local-layout {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.local-texto,
-.local-mapa {
-  flex: 1;
-}
-
-.local-mapa iframe {
-  width: 100%;
-  height: 400px;
-  border: 0;
-}
-
-@media (max-width: 700px) {
-  .local-layout {
-    flex-direction: column;
-  }
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "titulo   titulo   titulo"
-    "tabela   tabela   imagem1"
-    "curiosidades imagem2 vazio1"
-    "vazio2   vazio2   vazio2";
-  gap: 20px;
-  padding: 40px;
-}
-
-.grid-titulo { grid-area: titulo; }
-.grid-tabela { grid-area: tabela; }
-.grid-imagem1 { grid-area: imagem1; }
-.grid-curiosidades { grid-area: curiosidades; }
-.grid-imagem2 { grid-area: imagem2; }
-.grid-vazio1 { grid-area: vazio1; }
-.grid-vazio2 { grid-area: vazio2; min-height: 60px; }
-
-.info-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.4s ease;
-}
-
+/* ---------- Hover das fotografias e grid (especificidade mais alta, por isso no fim) ---------- */
+.fotografias img:hover,
 .info-grid img:hover {
-  transform: scale(1.03);
-}
-
-.grid-titulo,
-.grid-tabela,
-.grid-curiosidades {
-  background-color: #fdeec4;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-.grid-imagem1,
-.grid-imagem2 {
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-@media (max-width: 700px) {
-  .info-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "titulo"
-      "tabela"
-      "imagem1"
-      "curiosidades"
-      "imagem2"
-      "vazio1"
-      "vazio2";
-  }
+  transform: scale(1.1);
 }
 
 /* ---------- Vídeo background ---------- */
@@ -312,7 +256,7 @@ td {
   z-index: 1;
   color: white;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgb(0 0 0 / 40%);
   padding: 30px 40px;
   border-radius: 10px;
 }
@@ -330,7 +274,11 @@ td {
   color: white;
   font-size: 2rem;
   font-weight: bold;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 6px rgb(0 0 0 / 70%);
+}
+
+.parallax-cairo {
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/18/16/19/pyramids-1834645_1280.jpg");
 }
 
 .content-scroll {
@@ -343,9 +291,33 @@ td {
   margin-bottom: 10px;
 }
 
-/* No telemóvel, background-attachment: fixed não funciona bem — desativa */
-@media (max-width: 700px) {
+/* ---------- Responsivo ---------- */
+@media (width <= 700px) {
+  .local-layout {
+    flex-direction: column;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "titulo"
+      "tabela"
+      "imagem1"
+      "curiosidades"
+      "imagem2"
+      "vazio1"
+      "vazio2";
+  }
+
   .parallax {
     background-attachment: scroll;
+  }
+}
+
+@media (width <= 500px) {
+  nav a {
+    flex: 1 1 40%;
+    font-size: 0.9rem;
+    padding: 14px 10px;
   }
 }

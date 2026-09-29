@@ -40,7 +40,7 @@ nav a {
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 15%);
   transition: transform 0.2s ease;
 }
 
@@ -50,7 +50,7 @@ nav a:hover {
   color: white;
 }
 
-@media (max-width: 500px) {
+@media (width <= 500px) {
   nav a {
     flex: 1 1 40%;
     font-size: 0.9rem;

@@ -71,17 +71,17 @@
       <section class="sec-emblematica">
         <div class="container">
           <img
-            src="https://cdn.pixabay.com/photo/2023/03/28/18/28/hieroglyph-7883891_1280.jpg"
+            src="https://cdn.pixabay.com/photo/2016/11/29/08/15/beach-1868342_1280.jpg"
             alt="Pôr do sol no deserto"
-            width="100%"
           />
           <div class="texto">O Cairo ao anoitecer</div>
         </div>
       </section>
+
       <section class="video-bg-section">
-        <video class="background-video" autoplay muted loop playsinline>
+        <video class="background-video" id="bg-video" muted loop playsinline>
           <source
-            src="https://pixabay.com/pt/videos/download/video-37997_medium.mp4"
+            src="https://cdn.pixabay.com/video/2026/07/12/363550_large.mp4"
             type="video/mp4"
           />
         </video>
@@ -92,12 +92,7 @@
         </div>
       </section>
 
-      <section
-        class="parallax"
-        style="
-          background-image: url(&quot;https://cdn.pixabay.com/photo/2016/11/18/16/19/pyramids-1834645_1280.jpg&quot;);
-        "
-      >
+      <section class="parallax parallax-cairo">
         <div class="parallax-texto">Terra dos Faraós</div>
       </section>
 
@@ -113,5 +108,9 @@
     <footer>
       <p>DIW 2026</p>
     </footer>
+
+    <script>
+      document.getElementById("bg-video").play();
+    </script>
   </body>
 </html>
