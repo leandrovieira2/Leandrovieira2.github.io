@@ -170,18 +170,23 @@ td {
 .grid-titulo {
   grid-area: titulo;
 }
+
 .grid-tabela {
   grid-area: tabela;
 }
+
 .grid-imagem1 {
   grid-area: imagem1;
 }
+
 .grid-curiosidades {
   grid-area: curiosidades;
 }
+
 .grid-imagem2 {
   grid-area: imagem2;
 }
+
 .grid-vazio1 {
   grid-area: vazio1;
 }
