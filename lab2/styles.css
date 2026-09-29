@@ -67,8 +67,7 @@ td {
 
 .fotografias {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   gap: 10px;
 }
 
