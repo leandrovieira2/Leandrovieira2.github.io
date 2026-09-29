@@ -2,48 +2,79 @@
 <html lang="pt">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Primeira Página</title>
-    <style>
-      img {
-        width: 300px;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <nav aria-label="Navegação principal">
-        <a href="cidade/index.html">Home</a>
-      </nav>
-    </header>
-    <h1>Primeira Página Web!</h1>
-    <main>
-      <p>Eis a minha primeira página Web!</p>
-      <p>
-        Na Unidade Curricular de
-        <a
-          href="https://moodle.ensinolusofona.pt/course/view.php?id=27320"
-          target="_blank"
-        >
-          Desenvolvimento de Interfaces Web
-        </a>
-        abordaremos as seguintes tenologias Web &#127760;:
-      </p>
-      <ul>
-        <li>HTML</li>
-        <li>cSS</li>
-        <li>JavaScript</li>
-        <li>React e Next.js</li>
-      </ul>
-      <p>Iremos criar soluções criativas!</p>
-      <nav aria-label="Navegação dos laboratórios">
+    <section id="inicio" class="hero">
+      <nav>
         <ul>
-          <li><a href="lab1/index.html">Lab1</a></li>
-          <li><a href="lab2/index.html">Lab2</a></li>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#cadeira">Interfaces Web</a></li>
         </ul>
       </nav>
-      <img src="images/image.svg" alt="Desenvolvimento de Interfaces Web" />
-    </main>
-    <footer></footer>
-    <p>Universidade Lusófona © 2025</p>
+
+      <div class="hero-content">
+        <h1>Transformo ideias em soluções web criativas.</h1>
+        <p>
+          Sou estudante de Desenvolvimento de Interfaces Web, a aprender a
+          construir experiências digitais.
+        </p>
+        <a href="#projetos" class="btn-cta">Explorar projetos</a>
+      </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+      <h2>Projetos / Labs</h2>
+      <p>Alguns exercícios desenvolvidos ao longo da UC.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Lab 1</h3>
+          <p>Estrutura base e semântica</p>
+          <a href="lab1/index.html">Ver Lab 1</a>
+        </div>
+        <div class="card">
+          <h3>Lab 2</h3>
+          <p>Estilos e layout responsivo</p>
+          <a href="lab2/index.html">Ver Lab 2</a>
+        </div>
+        <div class="card">
+          <h3>Lab 3</h3>
+          <p>Duplicado e evoluído a partir do Lab 2</p>
+          <a href="lab3/index.html">Ver Lab 3</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="cadeira" class="disciplina">
+      <div class="disciplina-conteudo">
+        <div class="disciplina-texto">
+          <p>Eis a minha primeira página Web!</p>
+          <p>
+            Na Unidade Curricular de
+            <a
+              href="https://moodle.ensinolusofona.pt/course/view.php?id=27320"
+              target="_blank"
+            >
+              Desenvolvimento de Interfaces Web
+            </a>
+            abordaremos as seguintes tecnologias Web &#127760;:
+          </p>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React e Next.js</li>
+          </ul>
+          <p>Iremos criar soluções criativas!</p>
+        </div>
+        <div class="disciplina-imagem">
+          <img src="images/image.svg" alt="Desenvolvimento de Interfaces Web" />
+        </div>
+      </div>
+    </section>
   </body>
 </html>

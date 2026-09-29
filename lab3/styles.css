@@ -1,0 +1,86 @@
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+nav {
+  background-color: #2b2b2b;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+main {
+  background-color: white;
+  margin: 20px auto;
+  padding: 20px 40px;
+  max-width: 900px;
+  border-radius: 4px;
+}
+
+footer {
+  background-color: #2b2b2b;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 500px;
+}
+
+th,
+td {
+  border: 1px solid #333;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  color: #0071b8;
+}
+
+td {
+  color: #333;
+}
+
+.fotografias {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+
+.fotografias img {
+  width: 150px;
+  border-radius: 20px;
+}
+
+.poema p:nth-child(odd) {
+  color: #0071b8;
+}
+
+.poema p:nth-child(even) {
+  color: #333;
+  font-style: italic;
+}
