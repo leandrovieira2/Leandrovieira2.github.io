@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
   background-color: #f2f2f2;
   margin: 0;
@@ -7,22 +12,50 @@ body {
 
 header {
   background-color: #4caf50;
-  color: white;
+  padding: 20px;
   text-align: center;
-  padding: 20px 0;
+}
+
+header h1 {
+  color: white;
+  margin-bottom: 15px;
 }
 
 nav {
-  background-color: #2b2b2b;
-  padding: 10px 0;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 nav a {
-  color: white;
-  margin: 0 15px;
+  flex: 1 1 120px;
+  max-width: 200px;
+  text-align: center;
+  padding: 12px 20px;
+  background-color: white;
+  color: #333;
   text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
 }
+
+nav a:hover {
+  transform: scale(1.05);
+  background-color: #2b2b2b;
+  color: white;
+}
+
+@media (max-width: 500px) {
+  nav a {
+    flex: 1 1 40%;
+    font-size: 0.9rem;
+    padding: 14px 10px;
+  }
+}
+
 
 img {
   width: 100%;
@@ -83,4 +116,113 @@ td {
 .poema p:nth-child(even) {
   color: #333;
   font-style: italic;
+}
+
+/* Secções da página multimédia — cada uma ocupa o ecrã, com cor própria */
+.sec-fotografias,
+.sec-video,
+.sec-poema {
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sec-fotografias {
+  background-color: #fdeec4;
+}
+
+.sec-video {
+  background-color: #cde7f0;
+  align-items: center;
+  text-align: center;
+}
+
+.sec-poema {
+  background-color: #f0d9d9;
+}
+
+/* Fotografias com efeito de transição ao passar o rato */
+.fotografias {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.fotografias img {
+  width: 150px;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+
+.fotografias img:hover {
+  transform: scale(1.15);
+}
+
+/* Poema com nth-child */
+.poema p:nth-child(odd) {
+  color: #0071b8;
+}
+
+.poema p:nth-child(even) {
+  color: #333;
+  font-style: italic;
+}
+
+/* Secção com imagem emblemática de largura total */
+.sec-emblematica {
+  padding: 0;
+}
+
+.container {
+  position: relative;
+}
+
+.container img {
+  display: block;
+  width: 100%;
+}
+
+.texto {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 6vw;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 600px) {
+  .texto {
+    font-size: 8vw;
+    left: 15px;
+    bottom: 15px;
+  }
+}
+
+.local-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.local-texto,
+.local-mapa {
+  flex: 1;
+}
+
+.local-mapa iframe {
+  width: 100%;
+  height: 400px;
+  border: 0;
+}
+
+@media (max-width: 700px) {
+  .local-layout {
+    flex-direction: column;
+  }
 }

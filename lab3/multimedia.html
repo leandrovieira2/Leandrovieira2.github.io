@@ -10,10 +10,12 @@
     <header>
       <h1>Cairo</h1>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="local.html">Localização</a>
-        <a href="multimedia.html">Multimedia</a>
-        <a href="info.html">Informação</a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="local.html">Localização</a></li>
+          <li><a href="multimedia.html">Multimedia</a></li>
+          <li><a href="info.html">Informação</a></li>
+        </ul>
       </nav>
     </header>
 
@@ -28,8 +30,8 @@
         <a href="#poema">Poesia</a>
       </p>
 
-      <section>
-        <h3 id="fotografias">Fotografias</h3>
+      <section id="fotografias" class="sec-fotografias">
+        <h3>Fotografias</h3>
         <div class="fotografias">
           <img src="images/img1.jpeg" alt="Pirâmides de Gizé" />
           <img src="images/img2.jpeg" alt="Rio Nilo" />
@@ -42,8 +44,8 @@
         </div>
       </section>
 
-      <section>
-        <h3 id="video">Vídeo</h3>
+      <section id="video" class="sec-video">
+        <h3>Vídeo</h3>
         <iframe
           title="Vídeo sobre o Cairo"
           width="560"
@@ -54,8 +56,8 @@
         </iframe>
       </section>
 
-      <section>
-        <h3 id="poema">Poesia</h3>
+      <section id="poema" class="sec-poema">
+        <h3>Poesia</h3>
         <div class="poema">
           <p>Cairo, cidade do Nilo e do sol,</p>
           <p>onde o tempo se mede em pirâmides de pó.</p>
@@ -63,6 +65,17 @@
           <p>entre mesquitas, bazares e mares.</p>
           <p>Terra de faraós, de areia e de luz,</p>
           <p>onde o passado e o presente se cruzam sem alarde.</p>
+        </div>
+      </section>
+
+      <section class="sec-emblematica">
+        <div class="container">
+          <img
+            src="https://cdn.pixabay.com/photo/2023/03/28/18/28/hieroglyph-7883891_1280.jpg"
+            alt="Pôr do sol no deserto"
+            width="100%"
+          />
+          <div class="texto">O Cairo ao anoitecer</div>
         </div>
       </section>
     </main>
