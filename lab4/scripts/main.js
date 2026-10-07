@@ -27,13 +27,7 @@ fraseHover.addEventListener("mouseover", mudarFrase);
 fraseHover.addEventListener("mouseout", restaurarFrase);
 
 // ---------- 2. click — muda a cor de uma frase ----------
-const coresAleatorias = [
-  "#e63946",
-  "#2a9d8f",
-  "#f4a261",
-  "#8338ec",
-  "#ff006e",
-];
+const coresAleatorias = ["#e63946", "#2a9d8f", "#f4a261", "#8338ec", "#ff006e"];
 
 function pintarFrase() {
   const corEscolhida =
@@ -80,13 +74,7 @@ function mudarCorFundo() {
 inputCor.addEventListener("input", mudarCorFundo);
 
 // ---------- Extra: caixa muda de cor ao escrever ----------
-const coresCaixa = [
-  "#ffe5d9",
-  "#d8f3dc",
-  "#cde7f0",
-  "#fff3b0",
-  "#e0bbff",
-];
+const coresCaixa = ["#ffe5d9", "#d8f3dc", "#cde7f0", "#fff3b0", "#e0bbff"];
 
 function mudarCorCaixa() {
   if (caixaMensagem.value.length > 0) {
