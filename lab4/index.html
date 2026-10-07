@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 4 - Playground de Eventos</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Playground de Eventos</h1>
+      <p>Experimenta clicar, passar o rato e escrever nos campos abaixo!</p>
+    </header>
+
+    <main>
+      <section class="bloco">
+        <h2
+          id="frase-hover"
+          onmouseover="mudarFrase()"
+          onmouseout="restaurarFrase()"
+        >
+          Passa o rato por cima desta frase...
+        </h2>
+      </section>
+
+      <section class="bloco">
+        <p id="frase-pintar">Pinta-me!</p>
+        <button onclick="pintarFrase()">Pinta-me</button>
+      </section>
+
+      <section class="bloco">
+        <p>Contador: <span id="contador">0</span></p>
+        <button onclick="incrementarContador()">Conta</button>
+        <button ondblclick="reiniciarContador()">
+          Faz duplo-clique para reiniciar
+        </button>
+      </section>
+
+      <section class="bloco">
+        <p>Move o rato nesta caixa:</p>
+        <div id="zona-movimento" onmousemove="seguirRato(event)">
+          <span id="bolinha"></span>
+        </div>
+      </section>
+
+      <section class="bloco">
+        <label for="input-cor"
+          >Escreve uma cor em inglês (ex: blue, pink, green):</label
+        >
+        <input
+          type="text"
+          id="input-cor"
+          oninput="mudarCorFundo()"
+          placeholder="red, blue, green..."
+        />
+      </section>
+
+      <section class="bloco">
+        <label for="caixa-mensagem">Escreve uma mensagem:</label>
+        <textarea
+          id="caixa-mensagem"
+          oninput="mudarCorCaixa()"
+          placeholder="Escreve aqui..."
+        ></textarea>
+      </section>
+
+      <section class="bloco">
+        <img src="images/Fotografia.jpeg" alt="Dunas" />
+      </section>
+    </main>
+
+    <footer>
+      <p>DIW 2026 - Lab 4</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
