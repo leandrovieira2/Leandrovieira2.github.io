@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lab 4 - Playground de Eventos</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
@@ -14,31 +14,25 @@
 
     <main>
       <section class="bloco">
-        <h2
-          id="frase-hover"
-          onmouseover="mudarFrase()"
-          onmouseout="restaurarFrase()"
-        >
-          Passa o rato por cima desta frase...
-        </h2>
+        <h2 id="frase-hover">Passa o rato por cima desta frase...</h2>
       </section>
 
       <section class="bloco">
         <p id="frase-pintar">Pinta-me!</p>
-        <button onclick="pintarFrase()">Pinta-me</button>
+        <button type="button" id="btn-pintar">Pinta-me</button>
       </section>
 
       <section class="bloco">
         <p>Contador: <span id="contador">0</span></p>
-        <button onclick="incrementarContador()">Conta</button>
-        <button ondblclick="reiniciarContador()">
+        <button type="button" id="btn-contar">Conta</button>
+        <button type="button" id="btn-reiniciar">
           Faz duplo-clique para reiniciar
         </button>
       </section>
 
       <section class="bloco">
         <p>Move o rato nesta caixa:</p>
-        <div id="zona-movimento" onmousemove="seguirRato(event)">
+        <div id="zona-movimento">
           <span id="bolinha"></span>
         </div>
       </section>
@@ -47,25 +41,16 @@
         <label for="input-cor"
           >Escreve uma cor em inglês (ex: blue, pink, green):</label
         >
-        <input
-          type="text"
-          id="input-cor"
-          oninput="mudarCorFundo()"
-          placeholder="red, blue, green..."
-        />
+        <input type="text" id="input-cor" placeholder="red, blue, green..." />
       </section>
 
       <section class="bloco">
         <label for="caixa-mensagem">Escreve uma mensagem:</label>
-        <textarea
-          id="caixa-mensagem"
-          oninput="mudarCorCaixa()"
-          placeholder="Escreve aqui..."
-        ></textarea>
+        <textarea id="caixa-mensagem" placeholder="Escreve aqui..."></textarea>
       </section>
 
       <section class="bloco">
-        <img src="images/Fotografia.jpeg" alt="Dunas" />
+        <img src="images/fotografia.png" alt="Imagem ilustrativa" />
       </section>
     </main>
 
