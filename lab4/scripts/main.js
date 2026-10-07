@@ -27,10 +27,17 @@ fraseHover.addEventListener("mouseover", mudarFrase);
 fraseHover.addEventListener("mouseout", restaurarFrase);
 
 // ---------- 2. click — muda a cor de uma frase ----------
-const coresAleatorias = ["#e63946", "#2a9d8f", "#f4a261", "#8338ec", "#ff006e"];
+const coresAleatorias = [
+  "#e63946",
+  "#2a9d8f",
+  "#f4a261",
+  "#8338ec",
+  "#ff006e",
+];
 
 function pintarFrase() {
-  const corEscolhida = coresAleatorias[Math.floor(Math.random() * coresAleatorias.length)];
+  const corEscolhida =
+    coresAleatorias[Math.floor(Math.random() * coresAleatorias.length)];
   frasePintar.style.color = corEscolhida;
   frasePintar.style.fontWeight = "bold";
 }
@@ -72,12 +79,19 @@ function mudarCorFundo() {
 
 inputCor.addEventListener("input", mudarCorFundo);
 
-// ---------- Extra: caixa de mensagem muda a sua própria cor ao escrever ----------
-const coresCaixa = ["#ffe5d9", "#d8f3dc", "#cde7f0", "#fff3b0", "#e0bbff"];
+// ---------- Extra: caixa muda de cor ao escrever ----------
+const coresCaixa = [
+  "#ffe5d9",
+  "#d8f3dc",
+  "#cde7f0",
+  "#fff3b0",
+  "#e0bbff",
+];
 
 function mudarCorCaixa() {
   if (caixaMensagem.value.length > 0) {
-    const corAleatoria = coresCaixa[Math.floor(Math.random() * coresCaixa.length)];
+    const corAleatoria =
+      coresCaixa[Math.floor(Math.random() * coresCaixa.length)];
     caixaMensagem.style.backgroundColor = corAleatoria;
   } else {
     caixaMensagem.style.backgroundColor = "white";
