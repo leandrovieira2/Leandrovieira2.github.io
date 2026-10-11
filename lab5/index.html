@@ -110,6 +110,19 @@
           <div class="bola"></div>
         </div>
       </section>
+
+      <section>
+        <form>
+          <label for="nome">Nome:</label>
+          <input id="nome" type="text" placeholder="insira o seu nome" />
+
+          <label for="idade">Idade:</label>
+          <input id="idade" type="number" placeholder="insira a sua idade" />
+
+          <button type="submit">Submit</button>
+        </form>
+        <p id="resposta"></p>
+      </section>
     </main>
 
     <footer>
@@ -175,6 +188,15 @@
         .addEventListener("change", function () {
           caixaBolas.style.flexDirection = this.value;
         });
+
+      const nomeInput = document.getElementById("nome");
+      const idadeInput = document.getElementById("idade");
+      const resposta = document.getElementById("resposta");
+
+      document.querySelector("form").onsubmit = (e) => {
+        e.preventDefault(); // para não recarregar a página
+        resposta.textContent = `Olá, o ${nomeInput.value} tem ${idadeInput.value}!`;
+      };
     </script>
   </body>
 </html>
