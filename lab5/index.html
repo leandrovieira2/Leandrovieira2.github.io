@@ -75,7 +75,13 @@
 
       <section>
         <p>Camelos contados: <span id="contador">0</span></p>
-        <button type="button" onclick="contar()">Conta</button>
+        <button type="button" id="btn-incrementar">Incrementar</button>
+        <button type="button" id="btn-decrementar">Decrementar</button>
+        <button type="button" id="btn-reset">Reset</button>
+      </section>
+
+      <section>
+        <p>Temporizador: <span id="segundos">0</span> segundos</p>
       </section>
 
       <section>
@@ -130,7 +136,6 @@
     </footer>
 
     <script>
-      let contador = 0;
       let vez = 0;
 
       // Evento 1: o rato passa por cima da frase
@@ -152,11 +157,61 @@
         });
       });
 
-      // Evento 3: o botão conta (arrow function)
-      const contar = () => {
-        contador = contador + 1;
-        document.getElementById("contador").textContent = contador;
+      // Evento 3: contador com Local Storage
+
+      // 1. Variáveis
+      const contadorEl = document.getElementById("contador");
+      const btnIncrementar = document.getElementById("btn-incrementar");
+      const btnDecrementar = document.getElementById("btn-decrementar");
+      const btnReset = document.getElementById("btn-reset");
+
+      // O Local Storage guarda texto. Number() converte para número, e se a
+      // chave ainda não existir, getItem devolve null e Number(null) dá 0.
+      let contador = Number(localStorage.getItem("contador"));
+
+      // 2. Event handlers
+      const atualizarContador = () => {
+        contadorEl.textContent = contador;
+        localStorage.setItem("contador", contador);
       };
+
+      const incrementar = () => {
+        contador = contador + 1;
+        atualizarContador();
+      };
+
+      const decrementar = () => {
+        contador = contador - 1;
+        atualizarContador();
+      };
+
+      const reset = () => {
+        contador = 0;
+        atualizarContador();
+      };
+
+      // 3. Event listeners
+      btnIncrementar.addEventListener("click", incrementar);
+      btnDecrementar.addEventListener("click", decrementar);
+      btnReset.addEventListener("click", reset);
+
+      // Ao carregar a página, mostra o valor que estava guardado
+      contadorEl.textContent = contador;
+
+      // Temporizador com setInterval
+
+      // 1. Variáveis
+      const segundosEl = document.getElementById("segundos");
+      let segundos = 0;
+
+      // 2. Função chamada a cada segundo
+      const contarSegundos = () => {
+        segundos = segundos + 1;
+        segundosEl.textContent = segundos;
+      };
+
+      // 3. Arranca o temporizador: chama a função de 1000 em 1000 milissegundos
+      setInterval(contarSegundos, 1000);
 
       // Evento 4: o select muda a cor do fundo (função normal, para usar this)
       document.querySelector("#cor").addEventListener("change", function () {
@@ -189,6 +244,7 @@
           caixaBolas.style.flexDirection = this.value;
         });
 
+      // Formulário: mostra "Olá, o XXX tem YYY!" sem recarregar a página
       const nomeInput = document.getElementById("nome");
       const idadeInput = document.getElementById("idade");
       const resposta = document.getElementById("resposta");
