@@ -31,6 +31,23 @@
         text-align: center;
         padding: 15px;
       }
+
+      #caixa-bolas {
+        display: flex;
+        gap: 10px;
+        height: 200px;
+        box-sizing: border-box;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: lightgray;
+      }
+
+      .bola {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #e76f51;
+      }
     </style>
   </head>
   <body>
@@ -47,7 +64,13 @@
 
       <section>
         <p id="frase-pintar">As pirâmides esperam por ti!</p>
-        <button type="button" onclick="pintarFrase()">Pinta-me</button>
+        <button type="button" class="color" data-color="orange">Laranja</button>
+        <button type="button" class="color" data-color="dodgerblue">
+          Azul
+        </button>
+        <button type="button" class="color" data-color="goldenrod">
+          Dourado
+        </button>
       </section>
 
       <section>
@@ -56,13 +79,36 @@
       </section>
 
       <section>
-        <label for="cor">Escreve uma cor em inglês:</label>
-        <input type="text" id="cor" oninput="mudarFundo()" />
+        <label for="cor">Escolhe uma cor de fundo:</label>
+        <select id="cor">
+          <option value="#fdf3e0">Original</option>
+          <option value="white">Branco</option>
+          <option value="orange">Laranja</option>
+          <option value="lightblue">Azul claro</option>
+          <option value="tan">Areia</option>
+        </select>
       </section>
 
       <section>
         <label for="mensagem">Escreve uma mensagem:</label>
         <textarea id="mensagem" oninput="mudarCorMensagem()"></textarea>
+      </section>
+
+      <section>
+        <label for="direcao">Direção das bolas:</label>
+        <select id="direcao">
+          <option value="row">row</option>
+          <option value="row-reverse">row-reverse</option>
+          <option value="column">column</option>
+          <option value="column-reverse">column-reverse</option>
+        </select>
+
+        <div id="caixa-bolas">
+          <div class="bola"></div>
+          <div class="bola"></div>
+          <div class="bola"></div>
+          <div class="bola"></div>
+        </div>
       </section>
     </main>
 
@@ -84,38 +130,51 @@
           "Passa o rato por cima de mim";
       }
 
-      // Evento 2: o botão pinta a frase
-      function pintarFrase() {
-        document.getElementById("frase-pintar").style.color = "orange";
-      }
+      // Evento 2: cada botão pinta a frase com a cor guardada em data-color
+      const frasePintar = document.getElementById("frase-pintar");
 
+      document.querySelectorAll("button.color").forEach((botao) => {
+        botao.addEventListener("click", () => {
+          frasePintar.style.color = botao.dataset.color;
+        });
+      });
+
+      // Evento 3: o botão conta (arrow function)
       const contar = () => {
         contador = contador + 1;
         document.getElementById("contador").textContent = contador;
       };
 
-      // Evento 4: escrever uma cor muda o fundo da página
-      function mudarFundo() {
-        let cor = document.getElementById("cor").value;
-        document.body.style.backgroundColor = cor;
-      }
+      // Evento 4: o select muda a cor do fundo (função normal, para usar this)
+      document.querySelector("#cor").addEventListener("change", function () {
+        document.body.style.backgroundColor = this.value;
+      });
 
       // Evento 5: a cada tecla, o fundo da caixa muda de cor (4 cores)
       function mudarCorMensagem() {
         let caixa = document.getElementById("mensagem");
         vez = vez + 1;
 
-        if (vez == 1) {
+        if (vez === 1) {
           caixa.style.backgroundColor = "orange";
-        } else if (vez == 2) {
+        } else if (vez === 2) {
           caixa.style.backgroundColor = "lightblue";
-        } else if (vez == 3) {
+        } else if (vez === 3) {
           caixa.style.backgroundColor = "yellow";
         } else {
           caixa.style.backgroundColor = "tan";
           vez = 0;
         }
       }
+
+      // Select flex: muda a flex-direction do contentor das bolas
+      const caixaBolas = document.getElementById("caixa-bolas");
+
+      document
+        .querySelector("#direcao")
+        .addEventListener("change", function () {
+          caixaBolas.style.flexDirection = this.value;
+        });
     </script>
   </body>
 </html>
