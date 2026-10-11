@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 5 - Cairo</title>
+    <style>
+      body {
+        background-color: #fdf3e0;
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        background-color: #e76f51;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      section {
+        background-color: white;
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Eventos no Cairo</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2 id="frase" onmouseover="mudarFrase()" onmouseout="restaurarFrase()">
+          Passa o rato por cima de mim
+        </h2>
+      </section>
+
+      <section>
+        <p id="frase-pintar">As pirâmides esperam por ti!</p>
+        <button type="button" onclick="pintarFrase()">Pinta-me</button>
+      </section>
+
+      <section>
+        <p>Camelos contados: <span id="contador">0</span></p>
+        <button type="button" onclick="contar()">Conta</button>
+      </section>
+
+      <section>
+        <label for="cor">Escreve uma cor em inglês:</label>
+        <input type="text" id="cor" oninput="mudarFundo()" />
+      </section>
+
+      <section>
+        <label for="mensagem">Escreve uma mensagem:</label>
+        <textarea id="mensagem" oninput="mudarCorMensagem()"></textarea>
+      </section>
+    </main>
+
+    <footer>
+      <p>DIW 2026 - Lab 5</p>
+    </footer>
+
+    <script>
+      let contador = 0;
+      let vez = 0;
+
+      // Evento 1: o rato passa por cima da frase
+      function mudarFrase() {
+        document.getElementById("frase").textContent = "Bem-vindo ao Cairo!";
+      }
+
+      function restaurarFrase() {
+        document.getElementById("frase").textContent =
+          "Passa o rato por cima de mim";
+      }
+
+      // Evento 2: o botão pinta a frase
+      function pintarFrase() {
+        document.getElementById("frase-pintar").style.color = "orange";
+      }
+
+      const contar = () => {
+        contador = contador + 1;
+        document.getElementById("contador").textContent = contador;
+      };
+
+      // Evento 4: escrever uma cor muda o fundo da página
+      function mudarFundo() {
+        let cor = document.getElementById("cor").value;
+        document.body.style.backgroundColor = cor;
+      }
+
+      // Evento 5: a cada tecla, o fundo da caixa muda de cor (4 cores)
+      function mudarCorMensagem() {
+        let caixa = document.getElementById("mensagem");
+        vez = vez + 1;
+
+        if (vez == 1) {
+          caixa.style.backgroundColor = "orange";
+        } else if (vez == 2) {
+          caixa.style.backgroundColor = "lightblue";
+        } else if (vez == 3) {
+          caixa.style.backgroundColor = "yellow";
+        } else {
+          caixa.style.backgroundColor = "tan";
+          vez = 0;
+        }
+      }
+    </script>
+  </body>
+</html>
