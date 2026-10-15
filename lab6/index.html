@@ -3,19 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loja</title>
+    <title>Cromos</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <header>
-      <h1>Loja</h1>
+      <h1>Coleção de Cromos</h1>
     </header>
 
-    <main></main>
+    <main>
+      <section id="colecao">
+        <h2>A minha coleção</h2>
+        <ul></ul>
+        <h3>Total de cromos: <span>0</span></h3>
+      </section>
 
-    <footer>
-      <p>DIW 2026 - Lab 6</p>
-    </footer>
+      <section>
+        <h2>Registar novo cromo</h2>
+        <form>
+          <input
+            type="number"
+            placeholder="numero"
+            aria-label="Número do cromo"
+            required
+          />
+          <input type="submit" value="Registar Cromo" autofocus />
+        </form>
+      </section>
+    </main>
+
+    <footer>2026, ULusófona</footer>
 
     <script src="main.js"></script>
   </body>
