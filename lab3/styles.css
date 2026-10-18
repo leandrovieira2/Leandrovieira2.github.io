@@ -69,6 +69,7 @@ img {
 img[data-role="hero"] {
   height: 300px;
   object-fit: cover;
+  object-position: center;
 }
 
 iframe {
@@ -83,6 +84,10 @@ main {
   max-width: 900px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgb(29 78 95 / 15%);
+}
+
+.main-largo {
+  max-width: 1200px;
 }
 
 footer {
@@ -141,7 +146,7 @@ td {
 
 .sec-video iframe {
   width: 100%;
-  max-width: 560px;
+  max-width: 900px;
   height: auto;
   aspect-ratio: 16 / 9;
 }
@@ -153,18 +158,22 @@ td {
 .fotografias {
   display: flex;
   flex-flow: row wrap;
-  gap: 10px;
-  justify-content: center;
+  gap: 12px;
 }
 
 .fotografias img {
-  width: 150px;
-  max-width: 100%;
+  flex: 1 1 calc(50% - 7px);
+  min-width: 0;
   aspect-ratio: 3 / 2;
   object-fit: cover;
   border: 3px solid #c8963e;
   border-radius: 12px;
   transition: transform 0.4s ease;
+}
+
+.poema {
+  font-size: 1.3rem;
+  line-height: 1.8;
 }
 
 .poema p:nth-child(odd) {
@@ -265,7 +274,7 @@ td {
 
 .fotografias img:hover,
 .info-grid img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .video-bg-section {
@@ -313,7 +322,7 @@ td {
 }
 
 .parallax-cairo {
-  background-image: url("https://cdn.pixabay.com/photo/2016/11/18/16/19/pyramids-1834645_1280.jpg");
+  background-image: url("images/hero.jpg");
 }
 
 .content-scroll {
@@ -359,6 +368,14 @@ td {
 
   main {
     padding: 20px 40px;
+  }
+
+  .fotografias img {
+    flex-basis: calc(25% - 10px);
+  }
+
+  .poema {
+    font-size: 1.7rem;
   }
 
   .local-layout {
