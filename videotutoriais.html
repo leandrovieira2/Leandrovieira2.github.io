@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Videotutoriais HTML e CSS - Leandro</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #f6efe3;
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+      }
+
+      header {
+        background-color: #1d4e5f;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      main {
+        max-width: 1100px;
+        margin: 20px auto;
+        padding: 0 20px;
+      }
+
+      main > p {
+        margin-bottom: 20px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .card {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
+      }
+
+      .card h2 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+      }
+
+      .card iframe {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: 0;
+      }
+
+      .card a {
+        display: inline-block;
+        margin-top: 12px;
+        color: #1d4e5f;
+        font-weight: bold;
+      }
+
+      @media (width >= 768px) {
+        .cards {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Videotutoriais HTML e CSS</h1>
+    </header>
+
+    <main>
+      <p>Videotutoriais com a página criada durante cada demonstração.</p>
+
+      <div class="cards">
+        <article class="card">
+          <h2>1. Elementos estruturais HTML5</h2>
+          <iframe
+            title="Videotutorial 1"
+            src="https://youtu.be/TMKupdLG-bE"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <a href="videotutoriais/estrutura.html"
+            >Ver a página da demonstração</a
+          >
+        </article>
+
+        <article class="card">
+          <h2>2. Todos os tipos de seletores</h2>
+          <iframe
+            title="Videotutorial 2"
+            src="https://youtu.be/qi8nYTv4eWQ"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <a href="videotutoriais/seletores.html"
+            >Ver a página da demonstração</a
+          >
+        </article>
+
+        <article class="card">
+          <h2>3. Composição de seletores</h2>
+          <iframe
+            title="Videotutorial 3"
+            src="https://youtu.be/OCqsHf9K6Do"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <a href="videotutoriais/composicao-seletores.html"
+            >Ver a página da demonstração</a
+          >
+        </article>
+
+        <article class="card">
+          <h2>6. Display grid</h2>
+          <iframe
+            title="Videotutorial 6"
+            src="https://youtu.be/s5ufP-0G1ek"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <a href="videotutoriais/grid.html">Ver a página da demonstração</a>
+        </article>
+
+        <article class="card">
+          <h2>7. Media query</h2>
+          <iframe
+            title="Videotutorial 7"
+            src="https://youtu.be/70l_ZJoNdRs"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <a href="videotutoriais/media-query.html"
+            >Ver a página da demonstração</a
+          >
+        </article>
+      </div>
+    </main>
+  </body>
+</html>
