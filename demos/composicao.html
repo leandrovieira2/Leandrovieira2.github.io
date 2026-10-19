@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Composição de seletores - Leandro</title>
+    <style>
+      main > div:first-child {
+        color: red;
+      }
+
+      div div:nth-child(2) {
+        color: blue;
+      }
+
+      div div + div {
+        color: green;
+      }
+
+      div + p {
+        color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Composição de seletores - Leandro</h1>
+    </header>
+    <main>
+      <div>Vermelho</div>
+      <div>
+        <div>Preto</div>
+        <div>Azul</div>
+        <div>Verde</div>
+      </div>
+      <p>Violeta</p>
+      <p>Preto</p>
+      <p>Preto</p>
+    </main>
+  </body>
+</html>

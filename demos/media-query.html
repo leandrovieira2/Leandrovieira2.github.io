@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid responsivo - Leandro</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .contentor {
+        margin: 10px;
+        height: 600px;
+        padding: 10px;
+        background-color: purple;
+        display: grid;
+        grid-template-areas:
+          "header header header"
+          "menu main aside"
+          "menu footer footer";
+        grid-template-columns: 20vw 3fr 2fr;
+        grid-template-rows: 15vh 1fr 60px;
+        gap: 10px;
+      }
+
+      .contentor > * {
+        background-color: plum;
+        padding: 10px;
+        font-size: 1.5rem;
+      }
+
+      header {
+        grid-area: header;
+      }
+
+      nav {
+        grid-area: menu;
+      }
+
+      main {
+        grid-area: main;
+      }
+
+      aside {
+        grid-area: aside;
+      }
+
+      footer {
+        grid-area: footer;
+      }
+
+      @media (width <= 600px) {
+        .contentor {
+          background-color: khaki;
+          grid-template-areas:
+            "header"
+            "menu"
+            "main"
+            "aside"
+            "footer";
+          grid-template-columns: auto;
+          grid-template-rows: 15vh 10vh 2fr 1fr 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contentor">
+      <header>título</header>
+      <nav>menu</nav>
+      <main>conteúdo</main>
+      <aside>info</aside>
+      <footer>Leandro</footer>
+    </div>
+  </body>
+</html>

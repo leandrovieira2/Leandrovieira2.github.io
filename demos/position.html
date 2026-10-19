@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position - Leandro</title>
+    <style>
+      .caixa {
+        height: 50px;
+        margin: 0 40px;
+        padding: 10px;
+      }
+
+      .caixa-1 {
+        background-color: dodgerblue;
+      }
+
+      .caixa-2 {
+        background-color: dodgerblue;
+        position: relative;
+        top: 15px;
+        left: 25px;
+      }
+
+      .caixa-3 {
+        background-color: khaki;
+      }
+
+      .fora {
+        background-color: salmon;
+        height: 100px;
+        margin: 0 40px;
+        position: relative;
+      }
+
+      .dentro {
+        background-color: gray;
+        width: 120px;
+        height: 60px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+
+      .etiqueta {
+        background-color: #333;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Demo de posições de Leandro</h1>
+
+    <h2>Posição relativa</h2>
+    <div class="caixa caixa-1">1</div>
+    <div class="caixa caixa-2">2</div>
+    <div class="caixa caixa-3">3</div>
+
+    <h2>Posição absoluta</h2>
+    <div class="fora">
+      <div class="dentro">texto</div>
+    </div>
+
+    <p class="etiqueta">Leandro</p>
+  </body>
+</html>
